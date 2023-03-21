@@ -48,5 +48,6 @@ if met_df is not None:
         double_point(met_size, met_df, player_away, opponent_away, cube_level)
 
 else:
-    st.write('Please select a match equity table file (.met) from the left panel.')
+    st.write('Please select a match equity table file (.met).')
     st.write('You\'ll find it in C:\Program Files (x86)\eXtreme Gammon 2\MET folder.')
+    st.write('Copy the met file you\'d like to visualize to somewhere this app can access, such as a desktop, and drop it onto "Drag and drop file here" area in the left panel.')

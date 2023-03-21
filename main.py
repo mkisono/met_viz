@@ -32,12 +32,12 @@ with st.sidebar:
             met_array.append(met_list)
         met_df = pd.DataFrame(met_array, index=axis, columns=axis)
 
-    met_size = st.slider('table size', 1, size, 11)
-    player_away = st.slider('player away', 1, met_size, met_size)
-    opponent_away = st.slider('opponent away', 1, met_size, met_size)
-    cube_level = st.selectbox('cube level', (1, 2),
-                              format_func=format_cube_level)
-
+    if met_df is not None:
+        met_size = st.slider('table size', 1, size, 11)
+        player_away = st.slider('player away', 1, met_size, met_size)
+        opponent_away = st.slider('opponent away', 1, met_size, met_size)
+        cube_level = st.selectbox('cube level', (1, 2),
+                                  format_func=format_cube_level)
 
 if met_df is not None:
     match_equity_table(met_size, met_df, player_away, opponent_away)

@@ -33,11 +33,11 @@ def get_data(x_away, y_away, z):
 
 
 def get_mwc_diag(x_away, y_away, z):
-    x = np.linspace(start=(-y_away + 1), stop=(x_away - 1),
-                    num=(x_away + y_away - 1), dtype=np.int8)
+    x = np.linspace(start=(-y_away), stop=(x_away),
+                    num=(x_away + y_away + 1), dtype=np.int8)
     x_value = z[x_away][:y_away].values[:-1]
     y_value = z.iloc[y_away - 1][:x_away].values[::-1]
-    return x, np.concatenate([x_value, y_value])
+    return x, np.concatenate([np.array([0.0]), x_value, y_value, np.array([1.0])])
 
 
 def plot_mwc(x_away, y_away, z):

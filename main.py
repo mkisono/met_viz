@@ -13,7 +13,7 @@ from util import format_cube_level
 met_df = None
 size = 25
 
-st.set_page_config(layout='wide')
+st.set_page_config(page_title='MET Visualizer', layout='wide')
 
 with st.sidebar:
     uploaded_file = st.file_uploader("Choose a met file")

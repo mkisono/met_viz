@@ -33,7 +33,7 @@ with st.sidebar:
         met_df = pd.DataFrame(met_array, index=axis, columns=axis)
 
     if met_df is not None:
-        met_size = st.slider('table size', 1, size, 11)
+        met_size = st.slider('table size', 3, size, 11)
         player_away = st.slider('player away', 1, met_size, met_size)
         opponent_away = st.slider('opponent away', 1, met_size, met_size)
         cube_level = st.selectbox('cube level', (1, 2),

@@ -12,6 +12,7 @@ from util import format_cube_level
 
 met_df = None
 size = 25
+cube_levels = (1, 2, 4, 8)
 
 st.set_page_config(page_title='MET Visualizer', layout='wide')
 
@@ -36,7 +37,9 @@ with st.sidebar:
         met_size = st.slider('table size', 3, size, 11)
         player_away = st.slider('player away', 1, met_size, met_size)
         opponent_away = st.slider('opponent away', 1, met_size, met_size)
-        cube_level = st.selectbox('cube level', (1, 2),
+        cube_level = st.selectbox('cube level',
+                                  tuple(
+                                      filter(lambda x: x * 2 <= met_size, cube_levels)),
                                   format_func=format_cube_level)
 
 if met_df is not None:

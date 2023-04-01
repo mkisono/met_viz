@@ -17,7 +17,7 @@ cube_levels = (1, 2, 4, 8)
 st.set_page_config(page_title='MET Visualizer', layout='wide')
 
 with st.sidebar:
-    uploaded_file = st.file_uploader("Choose a met file")
+    uploaded_file = st.file_uploader("Choose a met file", type='met')
     if uploaded_file is not None:
         stringio = StringIO(uploaded_file.getvalue().decode('cp1250'))
         lines = [line.lstrip() for line in stringio.readlines()]
